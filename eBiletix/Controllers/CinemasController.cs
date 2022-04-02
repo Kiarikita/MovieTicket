@@ -19,7 +19,7 @@ namespace eBiletix.Controllers
         public IActionResult Index()
         {
             var data = _context.Cinemas.ToList();
-            return View(data);
+            return View("Index", data);
         }
     }
 }

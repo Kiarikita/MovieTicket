@@ -28,31 +28,31 @@ namespace eBiletix.Data
                         new Cinema()
                         {
                         Name = "Cinema 1",
-                        Logo = "~Content\\img\\cinemaLogo\\alamo.png",
+                        Logo = "",
                         Description = "Alamo Sineması"
                         },
                         new Cinema()
                         {
                         Name = "Cinema 2",
-                        Logo = "~Content\\img\\cinemaLogo\\avsar.jpg",
+                        Logo = "",
                         Description = "Avşar Sineması "
                         },
                         new Cinema()
                         {
                         Name = "Cinema 3",
-                        Logo = "~Content\\img\\cinemaLogo\\cineatlas.jpg",
+                        Logo = "",
                         Description = "CineAtlas Sineması "
                         },
                         new Cinema()
                         {
                         Name = "Cinema 4",
-                        Logo = "~Content\\img\\cinemaLogo\\cinemax.png",
+                        Logo = "",
                         Description = "Cinemax Sineması "
                         },
                         new Cinema()
                         {
                         Name = "Cinema 5",
-                        Logo = "~Content\\img\\cinemaLogo\\cinemaximum.jpeg",
+                        Logo = "",
                         Description = "Cinemaximum Sineması "
                         }
                     });
@@ -116,37 +116,37 @@ namespace eBiletix.Data
                         {
                             FullName = "Deborah Snyder",
                             Bio = "Deborah Snyder Biografi",
-                            ProfilePictureURL = "~Content\\img\\producer\\deborahSnyder.jpg"
+                            ProfilePictureURL = ""
                         },
                         new Producer()
                         {
                             FullName = "Frank Darabont",
                             Bio = "Frank Darabont Biografi",
-                            ProfilePictureURL = "~Content\\img\\producer\\frankdarabont.jpg"
+                            ProfilePictureURL = ""
                         },
                         new Producer()
                         {
                             FullName = "Hiram Garcia",
                             Bio = "Hiram Garcia Biografi",
-                            ProfilePictureURL = "~Content\\img\\producer\\hiramGarcia.jpg"
+                            ProfilePictureURL = ""
                         },
                         new Producer()
                         {
                             FullName = "Lana Wachowski",
                             Bio = "Lana Wachowski Biografi",
-                            ProfilePictureURL = "~Content\\img\\producer\\LanaWachowski.jpg"
+                            ProfilePictureURL = ""
                         },
                         new Producer()
                         {
                             FullName = "Martin Campbell",
                             Bio = "Martin Campbell Biografi",
-                            ProfilePictureURL = "~Content\\img\\producer\\martinCampbell.jpg"
+                            ProfilePictureURL = ""
                         },
                         new Producer()
                         {
                             FullName = "Wyck Godfrey",
                             Bio = "Wyck Godfrey Biografi",
-                            ProfilePictureURL = "~Content\\img\\producer\\WyckGodfrey.jpg"
+                            ProfilePictureURL = ""
                         }
 
                     });
@@ -163,7 +163,7 @@ namespace eBiletix.Data
                             Name = "The Green Mile",
                             Description = "The Green Mile Açıklaması",
                             Price = 25.00,
-                            ImageURL = "~Content\\img\\film\\greenMile.jpg",
+                            ImageURL = "",
                             StartDate = DateTime.Now,
                             EndDate =DateTime.Now.AddDays(10),
                             CinemaId = 1,
@@ -177,7 +177,7 @@ namespace eBiletix.Data
                             Name = "Matrix",
                             Description = "Matrix Açıklaması",
                             Price = 25.00,
-                            ImageURL = "~Content\\img\\film\\matrix.jpg",
+                            ImageURL = "",
                             StartDate = DateTime.Now,
                             EndDate =DateTime.Now.AddDays(10),
                             CinemaId = 2,
@@ -191,7 +191,7 @@ namespace eBiletix.Data
                             Name = "Skyscraper",
                             Description = "Skyscraper Açıklaması",
                             Price = 25.00,
-                            ImageURL = "~Content\\img\\film\\skyscraper.jpg",
+                            ImageURL = "",
                             StartDate = DateTime.Now,
                             EndDate =DateTime.Now.AddDays(3),
                             CinemaId = 3,
@@ -204,7 +204,7 @@ namespace eBiletix.Data
                             Name = "Twilight",
                             Description = "Twilight Açıklaması",
                             Price = 25.00,
-                            ImageURL = "~Content\\img\\film\\twilight.jpg",
+                            ImageURL = "",
                             StartDate = DateTime.Now,
                             EndDate =DateTime.Now.AddDays(5),
                             CinemaId = 4,
@@ -218,7 +218,7 @@ namespace eBiletix.Data
                             Name = "Wonder Woman",
                             Description = "Wonder Woman Açıklaması",
                             Price = 25.00,
-                            ImageURL = "~Content\\img\\film\\wonderWoman.jpg",
+                            ImageURL = "",
                             StartDate = DateTime.Now,
                             EndDate =DateTime.Now.AddDays(5),
                             CinemaId = 5,
@@ -231,7 +231,7 @@ namespace eBiletix.Data
                             Name = "The Legend of Zorro",
                             Description = "The Legend of Zorro Açıklaması",
                             Price = 25.00,
-                            ImageURL = "~Content\\img\\film\\zorro.jpg",
+                            ImageURL = "",
                             StartDate = DateTime.Now,
                             EndDate =DateTime.Now.AddDays(5),
                             CinemaId = 4,

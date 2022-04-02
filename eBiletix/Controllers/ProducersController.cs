@@ -20,7 +20,7 @@ namespace eBiletix.Controllers
         public async Task<IActionResult> Index()
         {
             var data = await _context.Producers.ToListAsync();
-            return View(data);
+            return View("Index", data);
         }
     }
 }

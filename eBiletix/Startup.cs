@@ -1,4 +1,5 @@
 using eBiletix.Data;
+using eBiletix.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +27,12 @@ namespace eBiletix
         {
             //Dbcontext configuration
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+
+            //Services Configuration
+            services.AddScoped<IActorService, ActorService>();
+
             services.AddControllersWithViews();
+
             
         }
 
