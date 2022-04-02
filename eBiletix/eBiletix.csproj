@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Content\css\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
 

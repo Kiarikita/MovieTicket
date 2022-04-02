@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "404 Not Found";
+}
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .centerla {
+        display: flex;
+        justify-content: center;
+    }
+
+    #main {
+        float: left;
+        width: 300px;
+        height: 300px;
+        border-radius: 190px;
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 16px;
+        line-height: 300px;
+        font-weight: bold;
+        font-family: sans-serif;
+        position: relative;
+    }
+
+    .one {
+        background-color: blue;
+        padding-right: 10px;
+    }
+
+    .two::before {
+        content: '404';
+        position: absolute;
+        left: 20px
+    }
+
+    .two {
+        background-color: rgba(255,0,0,0.5);
+        margin-left: -70px;
+        padding-left: 10px;
+    }
+</style>
+<body>
+    <h1 class="centerla">Error: 404 - Page Not Found</h1> <br />
+    <div class="centerla">
+        <div class="one" id="main">We broke something.</div>
+        <div class="two" id="main">You cannot type.      </div>
+    </div>
+    <br />
+    <hr />
+    <div class="centerla">
+        <div>
+            <p>You might be here because:</p>
+            <ul>
+                <li>The page has moved</li>
+                <li>The page no longer exists</li>
+                <li>You were looking for your kittens and got lost</li>
+                <li>You like 404 pages</li>
+            </ul>
+        </div>
+    </div>
+    <div class="centerla">
+        <a asp-controller="Movies" asp-action="Index" class="btn btn-outline-primary" role="button" aria-pressed="true">Go Home</a>
+    </div>
+</body>

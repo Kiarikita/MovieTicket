@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace eBiletix.Data.Services
 {
-    public interface IActorService :IEntityBaseRepository<Actor>
+    public class ProducerService : EntityBaseRepository<Producer>, IProducerService
     {
-        
+        public ProducerService(AppDbContext context) : base(context)
+        {
+
+        }
     }
 }
