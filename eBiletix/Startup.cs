@@ -31,6 +31,8 @@ namespace eBiletix
             //Services Configuration
             services.AddScoped<IActorService, ActorService>();
             services.AddScoped<IProducerService, ProducerService>();
+            services.AddScoped<ICinemaService, CinemaService>();
+            services.AddScoped<IMovieService, MovieService>();
             services.AddControllersWithViews();
 
             

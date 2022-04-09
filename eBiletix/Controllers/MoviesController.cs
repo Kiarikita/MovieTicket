@@ -1,4 +1,5 @@
 ﻿using eBiletix.Data;
+using eBiletix.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,17 +10,24 @@ namespace eBiletix.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IMovieService _service;
 
-        public MoviesController(AppDbContext context)
+        public MoviesController(IMovieService service)
         {
-            _context = context;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Movies.ToList();
-            return View("Index", data);
+            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+            return View("Index", allMovies);
+        }
+
+        //GET: Movies/Details/id
+        public async Task<IActionResult> Details(int id)
+        {
+            var movieDetail = await _service.GetMovieByIdAsync(id);
+            return View(movieDetail);
         }
     }
 }
