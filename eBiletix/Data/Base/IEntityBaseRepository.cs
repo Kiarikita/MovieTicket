@@ -10,8 +10,8 @@ namespace eBiletix.Data.Base
     {
         Task<IEnumerable<T>> GetAllAsync();
 
-        Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties);
-
+        Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties); //arrayin içindeki indeks miktarına göre esneklik sağlar 
+        //delegate birden fazla functionı kullanabilme yetisi, delege etmek
         Task<T> GetByIdAsync(int id);
 
         Task AddAsync(T entity);

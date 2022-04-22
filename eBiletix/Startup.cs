@@ -28,11 +28,12 @@ namespace eBiletix
             //Dbcontext configuration
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
 
-            //Services Configuration
+            //Services Configuration -- dependency injection
             services.AddScoped<IActorService, ActorService>();
             services.AddScoped<IProducerService, ProducerService>();
             services.AddScoped<ICinemaService, CinemaService>();
             services.AddScoped<IMovieService, MovieService>();
+
             services.AddControllersWithViews();
 
             
