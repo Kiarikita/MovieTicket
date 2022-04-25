@@ -2,5 +2,17 @@
   {
     "outputFile": "wwwroot/sass/movieDetail.css",
     "inputFile": "wwwroot/sass/movieDetail.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/movieViewDetail.css",
+    "inputFile": "wwwroot/sass/movieViewDetail.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/movieIndex.css",
+    "inputFile": "wwwroot/sass/movieIndex.scss"
+  },
+  {
+    "outputFile": "wwwroot/sass/movieIndexStyle.css",
+    "inputFile": "wwwroot/sass/movieIndexStyle.scss"
   }
 ]

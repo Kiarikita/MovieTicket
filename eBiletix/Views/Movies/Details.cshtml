@@ -3,51 +3,20 @@
 @{
     ViewData["Title"] = "Details of Movies";
 }
-<link href="~/sass/movieDetail.min.css" rel="stylesheet" />
-<div class="movie-card">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <div class="container">
-
-        <a href="#"><img src="@Model.ImageURL" alt="cover" class="cover" /></a>
-
-        <div class="hero">
-            <!--<img src="@Model.ImageURL"--> @*alt="cover"*@ <!--class="hero" />-->
-
-            <div class="details">
-
-                <div class="title1">@Model.Name <span>@Model.MovieCategory</span></div>
-
-                <div class="title2">
-                    <img class="sinemaLogo" src="@Model.Cinema.Logo" />
-                    <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId"> @Model.Cinema.Name</a>
-                </div>
-
-                <fieldset class="rating">
-                    <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" id="star4" name="rating" value="4" checked /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                </fieldset>
-
-                @*<span class="likes">109 likes</span>*@
-
-            </div> <!-- end details -->
-
-        </div> <!-- end hero -->
-
-        <div class="description">
-
+<link href="~/sass/movieViewDetail.min.css" rel="stylesheet" />
+<div class="movie_card" id="bright">
+    <div class="info_section">
+        <div class="movie_header">
+            <img class="locandina" src="@Model.ImageURL" style="height: 200px;"/>
+            <h1>@Model.Name<span class="type"><h6>@Model.MovieCategory</h6></span></h1>
+            @*<h4>2017, David Ayer</h4>*@
+            <span class="minutes">
+                <img class="sinemaLogo" src="@Model.Cinema.Logo" /><a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId"> @Model.Cinema.Name</a>
+            </span>
             <div class="column1">
-                @*<p><span class="badge bg-success text-white">Bilet Fiyatı: @Model.Price ₺</span></p>*@
 
-                <p>Başlangıç Tarihi:</br> @Model.StartDate.ToString("dd MMM yy")</p>
-                <p>Bitiş Tarihi:</br> @Model.EndDate.ToString("dd MMM yy")</p>
+                <p>Başlangıç Tarihi: @Model.StartDate.ToString("dd MMM yy")</p>
+                <p>Bitiş Tarihi: @Model.EndDate.ToString("dd MMM yy")</p>
 
                 @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
                 {
@@ -62,30 +31,24 @@
                     <span class="badge bg-primary text-white">Upcoming</span>
                 }
 
-                @*<span class="tag">fantasy</span>
-                    <span class="tag">adventure</span>*@
             </div> <!-- end column1 -->
+        </div>
+        <div class="movie_desc">
+            <p class="text">
+                @Model.Description
+            </p>
+            <div class="avatars">
+                @foreach (var actor in Model.Actors_Movies)
+                {
+                    <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId" data-tooltip="@actor.Actor.FullName" data-placement="top">
+                        <img src="@actor.Actor.ProfilePictureURL" alt="avatar1" />
+                    </a>
 
-            <div class="column2">
-
-                <p>@Model.Description@*<a href="#" class="readMore"> ...  read more</a>*@</p>
-
-                <div class="avatars">
-                    @foreach (var actor in Model.Actors_Movies)
-                    {
-                        <a href="#" data-tooltip="@actor.Actor.FullName" data-placement="top">
-                            <img src="@actor.Actor.ProfilePictureURL" alt="avatar1" />
-                        </a>
-
-                        <a href="#" class="ml-2" data-tooltip="@Model.Producer.FullName" data-placement="top">
-                            <img src="@Model.Producer.ProfilePictureURL" alt="avatar2" />
-                        </a>
-                    }
-
-
-                </div> <!-- end avatars -->
-            </div> <!-- end column2 -->
-
+                    <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId" class="ml-2" data-tooltip="@Model.Producer.FullName" data-placement="top">
+                        <img src="@Model.Producer.ProfilePictureURL" alt="avatar2" />
+                    </a>
+                }
+            </div> <!-- end avatars -->
             <div class="column3">
                 <div class="float-right">
                     <p class="card-text">
@@ -98,8 +61,8 @@
                     </p>
                 </div>
             </div>
-        </div> <!-- end description -->
+        </div>
+    </div>
+    <div><img class="blur_back detail_back" src="@Model.ImageURL"/></div>
+</div>
 
-
-    </div> <!-- end container -->
-</div> <!-- end movie-card -->
